@@ -87,7 +87,7 @@ img {
     background-color: gainsboro;
 }
 
-.section-3{
+#team{
     height: 550px;
     background-color: rgb(147, 239, 255);
 }
@@ -105,7 +105,7 @@ img {
     color: #3e3e3e;
     background: white;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 .col-3{
