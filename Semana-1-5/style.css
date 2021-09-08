@@ -43,12 +43,12 @@ img {
     margin: 0;
     padding: 0.36em 0;
 }
-
+/*
 .container-imagen{
     background-image: url('./bg.png');
     height: 240px;
-    /* margin-bottom: 20px; */
-}
+    /* margin-bottom: 20px; 
+}*/
 
 .nav-list{
     padding: 0.25em 0;
@@ -78,7 +78,7 @@ img {
 
 .section-1{
     height: 500px;
-    background-color: rebeccapurple;
+    background-color: gray;
 
 }
 
@@ -111,7 +111,7 @@ img {
 .col-3{
     width: 33.08%;
     height: 470px;
-    background-color: aquamarine;
+    background-color: rgb(230, 236, 234);
     display: inline-block;
     padding: -15px;
     margin-top: 5px;
@@ -119,7 +119,7 @@ img {
 }
 .col-5{
     width: 19%;
-    height: 470px;
+    height: 450px;
     display: inline-block;
     margin: 5px, 2px, 2px,2px auto;
     text-align: center;
@@ -182,11 +182,11 @@ img {
     text-align: right;
 }
 
-
+/*
 .fa-ambulance.news-logo{
     padding: 0.25em 0;
 }
-
+*/
 
 .news-url{
     font-size: 10px;
