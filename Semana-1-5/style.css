@@ -121,7 +121,7 @@ img {
     width: 19%;
     height: 470px;
     display: inline-block;
-    margin: 5px 4px 0;
+    margin: 5px, 2px, 2px,2px auto;
     text-align: center;
     background-color: rgb(255, 255, 255);
 }
