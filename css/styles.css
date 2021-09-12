@@ -1,0 +1,25 @@
+body
+{
+    font-family: sans-serif;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.servicios
+{
+    background-color: #3CA7F0;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: -apple-system;
+}
+
+.servicios__contenedor{
+    width: 26%;
+}
+
+.servicios__contenedor--texto{
+    text-align: left;
+}
