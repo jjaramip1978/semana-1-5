@@ -4,9 +4,10 @@ body{
 }
 
 img {
-    height: 150px;
-    width: 100;
+    max-height: 150px;
+    max-width: 100;
 }
+
 .container{
     width: 1200px;
     background-color: #888888;
@@ -22,7 +23,6 @@ img {
     height: auto;
     
 }
-
 .container-menu{
     height: 60px;
     background-color: antiquewhite;
@@ -88,14 +88,14 @@ img {
 }
 
 #team{
-    height: 550px;
+    height: 500px;
     background-color: rgb(147, 239, 255);
 }
 
 .footer{
     height: 200px;
-    background-color: rgb(222, 222, 223);
-    bottom: 0px;
+    background-color: rgb(0, 0, 0);
+    bottom: 10px;
     /* position: fixed; */
     /* width: 1200px; */
 }
@@ -108,6 +108,15 @@ img {
     text-align: left;
 }
 
+.col-2{
+    width: 49.5%;
+    height: 170px;
+    display: inline-block;
+    margin: 0px 0px 0px;
+    padding: 0px;
+    text-align: left;
+    background-color: rgb(0, 0, 0);
+}
 .col-3{
     width: 33.08%;
     height: 470px;
@@ -119,9 +128,9 @@ img {
 }
 .col-5{
     width: 19%;
-    height: 450px;
+    height: 430px;
     display: inline-block;
-    margin: 5px, 2px, 2px,2px auto;
+    margin: 5px 4px 0;
     text-align: center;
     background-color: rgb(255, 255, 255);
 }
@@ -130,7 +139,7 @@ img {
     padding: 0.5em 0;
 }
 .service-text{
-    padding: 10px;
+    padding: 9px;
     text-align: justify;
     bottom: 0;
 }
@@ -138,6 +147,28 @@ img {
 .service-text.memebers{
     font-style: italic;
     font-size: 0.8em; 
+}
+
+.service-textFooter1{
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    text-align: left;
+    bottom: 0;
+    font-style: normal;
+    font-size: 3em;
+    color: #ffffff;
+}
+
+.service-textFooter2{
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    bottom: 0;
+    font-style: normal;
+    font-size: 0.4em;
+    color: #ffffff;
 }
 
 .section-news > div:first-child{
@@ -198,6 +229,39 @@ img {
     color: #ffffff; 
 }
 
+.news-textF{
+    color: white;
+    text-align: left;
+    width: 49%;
+}
+
+.news-textF > span.news-urlFooter{
+    text-align: left;
+}
+
+.news-urlFooter{
+    padding-left: 135px;
+    padding-top: 15px;
+    font-size: 30px;
+    float: left;
+}
+
+.news-urlFooter > a{
+    color: #ffffff; 
+}
+
+.news-urlFooter2{
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 15px;
+    float: left;
+}
+
+.news-urlFooter2 > a{
+    color: #ffffff; 
+}
+
+
 hr{
     color: white;
 }
@@ -226,8 +290,17 @@ hr{
     font-weight: bold;
 }
 
+h2.white-text {
+    color: rgb(255, 255, 255);
+    padding-top: 0;
+    margin: 0;
+}
 
-
+h4.white-text {
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin: 0;
+}
 
 
 
