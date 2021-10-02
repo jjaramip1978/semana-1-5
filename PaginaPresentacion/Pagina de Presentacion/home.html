@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="https://cdn.vuetifyjs.com/images/logos/favicon.ico">
+  
 </head>
 <body>
 <div id="app">
@@ -106,7 +107,7 @@
             class="mx-auto title font-weight-light mb-8"
             max-width="720"
           >
-          Página Principal G5 es una plataforma que te ayudara a conseguir los mejores servicios de ingeniería, por parte de los ingenieros profesionales mejor formados y en todas las áreas que necesitas.
+          Página Principal G5 es una plataforma que te ayudara a conseguir los mejores servicios de ingeniería. De los ingenieros profesionales mejor formados y en todas las áreas que necesitas.
           </v-responsive>
 
           <!-- <v-avatar
@@ -140,7 +141,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
+          <h2 class="display-2 font-weight-bold mb-3">NUESTROS SERVICIOS</h2>
 
           <v-responsive
             class="mx-auto mb-12"
@@ -156,10 +157,10 @@
               v-for="({ icon, title, text }, i) in features"
               :key="i"
               cols="12"
-              md="4"
+              md="6"
             >
               <v-card
-                class="py-12 px-4"
+                class="py-12 px-6"
                 color="grey lighten-5"
                 flat
               >
@@ -263,26 +264,21 @@
         ],
         features: [
           {
-            icon: 'mdi-account-group-outline',
-            title: 'Vibrant Community',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            icon: 'mdi-account-search-outline',
+            title: 'Busca Servicios',
+            text: 'Encuentra la soluciona tus problemas, encuentra a los profesionales mejor calificados y aptos para tus necesidaes en cuestion de minutos',
           },
           {
-            icon: 'mdi-update',
-            title: 'Frequent Updates',
-            text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
-          },
-          {
-            icon: 'mdi-shield-outline',
-            title: 'Long-term Support',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            icon: 'mdi-briefcase-outline',
+            title: 'Ofrece Servicios',
+            text: 'Se parte de la mejor comunidad de ingenieros profesionales, ofrece tus servicios dentro de nuestra plataforma y crea nuevas oportunidades de ingresos',
           },
         ],
         stats: [
-          ['24k', 'Github Stars'],
-          ['330+', 'Releases'],
-          ['1m', 'Downloads/mo'],
-          ['5m', 'Total Downloads'],
+          ['10+', 'Ingenieros'],
+          ['15+', 'Clientes'],
+          ['100+', 'Trabajos Concretados'],
+          ['★★★★★', 'Calificación Promedio'],
         ],
       }
     }
