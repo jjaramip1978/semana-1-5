@@ -31,9 +31,31 @@
         ></v-img>
       </v-avatar>
 
-      <v-toolbar-title class="font-weight-black headline">
-        Pagina Principal G5
-      </v-toolbar-title>
+      <v-container>
+        <v-row
+        >
+          <v-col order=1 order-sm=1>
+            <v-toolbar-title class="font-weight-black headline">
+              Pagina Principal G5
+            </v-toolbar-title>
+          </v-col>
+          <v-col align="end" order=3 order-sm=2>
+            <v-btn
+            color="primary" 
+            right='true'
+            href="https://vuetifyjs.com"
+          >Sign in</v-btn>
+          </v-col>
+          <v-col align="start" order=3 order-sm=2>
+              <v-btn
+              color="secondary"
+              right='true'
+              href="https://vuetifyjs.com"
+            >Sign up</v-btn>
+          </v-col>
+        </v-row>              
+      </v-container>
+
     </v-app-bar>
 
     <v-content>
@@ -41,7 +63,7 @@
         <v-row no-gutters>
           <v-img
             :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-            src="https://portinos-cloudfront.portinos.com/wp-content/uploads/2016/08/materiales-de-construccion-5982.jpg"
+            src="https://www.altonivel.com.mx/assets/images/Estructura_2015/Consultoria/Management/llegarar-a-acuerdos.jpg"
           >
             <v-theme-provider dark>
               <v-container fill-height>
@@ -141,7 +163,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">NUESTROS SERVICIOS</h2>
+          <h2 class="display-3 font-weight-bold mb-3">NUESTROS SERVICIOS</h2>
 
           <v-responsive
             class="mx-auto mb-12"
@@ -152,15 +174,15 @@
             <v-divider></v-divider>
           </v-responsive>
 
-          <v-row>
+          <v-row >
             <v-col
               v-for="({ icon, title, text }, i) in features"
               :key="i"
-              cols="12"
-              md="6"
+              cols="20"
+              md="4"
             >
               <v-card
-                class="py-12 px-6"
+                class="py-12 px-4"
                 color="grey lighten-5"
                 flat
               >
@@ -199,7 +221,7 @@
       <section id="stats">
         <v-parallax
           :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-          src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          src="https://fondosmil.com/fondo/47904.jpg"
         >
           <v-container fill-height>
             <v-row class="mx-auto">
@@ -265,13 +287,18 @@
         features: [
           {
             icon: 'mdi-account-search-outline',
-            title: 'Busca Servicios',
-            text: 'Encuentra la soluciona tus problemas, encuentra a los profesionales mejor calificados y aptos para tus necesidaes en cuestion de minutos',
+            title: 'El profesional idóneo para tu negocio',
+            text: 'Contamos con una amplia base de datos de ingenieros profesionales capacitados en diversas disciplinas, que le ayudarán a concretar, gestionar y ejecutar su idea de negocio. En nuestro portal de búsqueda podrá hacer uso de los filtros disponibles para encontrar a la persona indicada',
           },
           {
             icon: 'mdi-briefcase-outline',
-            title: 'Ofrece Servicios',
-            text: 'Se parte de la mejor comunidad de ingenieros profesionales, ofrece tus servicios dentro de nuestra plataforma y crea nuevas oportunidades de ingresos',
+            title: 'Comparte las ofertas de tus empleo',
+            text: 'Publica un trabajo y recibe propuestas y perfiles de ingenieros interesados en él. Es fácil y gratis. Escribe un título, descripción, presupuesto y pública tu propuesta de forma llamativa' ,
+          },
+          {
+            icon: 'mdi-calendar-check ',
+            title: 'Crea y organiza tu plan de trabajo',
+            text: 'Administra tu proyecto; por medio de formularios y tableros de control, crea, planifica y realiza seguimiento junto con tu equipo de trabajo. Crea la lista de actividades, estima los plazos, cronograma y balancea tus recursos',
           },
         ],
         stats: [
