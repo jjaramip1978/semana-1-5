@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
   <v-app>
     <v-app-bar
@@ -135,7 +136,7 @@
             large
           >
             <span class="grey--text text--darken-1 font-weight-bold">
-              Regístrate
+              Buscar Servicios
             </span>
           </v-btn>
         </v-container>
