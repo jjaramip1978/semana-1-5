@@ -28,13 +28,12 @@
             </v-toolbar-title>
           </v-col>
           <v-col align="end" order=3 order-sm=2>
-            <v-btn
-            color="primary" 
-            right='true'
-            href="https://vuetifyjs.com"
-          >Sign in</v-btn>
-          </v-col>
-          <v-col align="start" order=3 order-sm=2>
+              <v-btn
+                color="primary" 
+                right='true'
+                href="https://vuetifyjs.com"
+              >Sign in</v-btn>
+              &nbsp;
               <v-btn
               color="secondary"
               right='true'
