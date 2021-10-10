@@ -177,7 +177,7 @@
                 <v-theme-provider dark>
                   <div>
                     <v-avatar
-                      color="secondary"
+                      color="primary"
                       size="90"
                     >
                       <v-icon
