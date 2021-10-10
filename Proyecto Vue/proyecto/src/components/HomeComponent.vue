@@ -164,7 +164,7 @@
 
           <v-row >
             <v-col
-              v-for="({ icon, title, text }, i) in features"
+              v-for="({ icon, title, text, font_size }, i) in features"
               :key="i"
               cols="20"
               md="4"
@@ -177,8 +177,8 @@
                 <v-theme-provider dark>
                   <div>
                     <v-avatar
-                      color="primary"
-                      size="88"
+                      color="secondary"
+                      size="90"
                     >
                       <v-icon
                         large
@@ -191,6 +191,7 @@
                 <v-card-title
                   class="justify-center font-weight-black text-uppercase"
                   v-text="title"
+                  v-bind:style="{fontSize: font_size + 'px' }"
                 ></v-card-title>
 
                 <v-card-text
@@ -258,38 +259,24 @@
 
     data () {
       return {
-        articles: [
-          {
-            src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-            title: 'Mobile first & Responsive',
-            text: 'Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.',
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-            title: 'Think outside the box',
-            text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
-            title: 'Small changes, big difference',
-            text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
-          },
-        ],
         features: [
           {
             icon: 'mdi-account-search-outline',
             title: 'El profesional idóneo para tu negocio',
-            text: 'Contamos con una amplia base de datos de ingenieros profesionales capacitados en diversas disciplinas, que le ayudarán a concretar, gestionar y ejecutar su idea de negocio. En nuestro portal de búsqueda podrá hacer uso de los filtros disponibles para encontrar a la persona indicada',
+            text: 'Contamos con una amplia base de datos de ingenieros profesionales capacitados en diversas disciplinas, que te ayudarán a concretar, gestionar y ejecutar su idea de negocio. Busca a la persona indicada',
+            font_size: 20,
           },
           {
             icon: 'mdi-briefcase-outline',
-            title: 'Comparte las ofertas de tus empleo',
-            text: 'Publica un trabajo y recibe propuestas y perfiles de ingenieros interesados en él. Es fácil y gratis. Escribe un título, descripción, presupuesto y pública tu propuesta de forma llamativa' ,
+            title: 'Comparte la oferta de tu trabajo',
+            text: 'Publica un trabajo y recibe propuestas de los ingenieros de nuestra plataforma. Es fácil y gratis, solo escribe un título, descripción, presupuesto y pública tu propuesta de forma llamativa' ,
+            font_size: 21,
           },
           {
             icon: 'mdi-calendar-check ',
             title: 'Crea y organiza tu plan de trabajo',
-            text: 'Administra tu proyecto; por medio de formularios y tableros de control, crea, planifica y realiza seguimiento junto con tu equipo de trabajo. Crea la lista de actividades, estima los plazos, cronograma y balancea tus recursos',
+            text: 'Administra tu proyecto por medio de formularios y tableros de control. Crea, planifica y realiza seguimiento junto con tu equipo de trabajo, gestionando y monitorizando el desarrollo del proyecto',
+            font_size: 20,
           },
         ],
         stats: [
