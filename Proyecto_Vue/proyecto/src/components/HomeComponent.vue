@@ -247,7 +247,7 @@
   </v-app>
  </div>
 </template>
-
+l
 <script>
   export default {
 
