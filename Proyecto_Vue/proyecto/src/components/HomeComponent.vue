@@ -131,9 +131,9 @@
 
           <v-btn
             color="grey"
-            href="https://vuetifyjs.com"
             outlined
             large
+            :to="page" link
           >
             <span class="grey--text text--darken-1 font-weight-bold">
               Buscar Servicios
@@ -249,15 +249,11 @@
 </template>
 
 <script>
-  
-
-  
-
-
   export default {
 
     data () {
       return {
+        page: "/buscador",
         articles: [
           {
             src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
