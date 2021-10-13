@@ -24,7 +24,7 @@
         <v-row>
           <v-col order=1 order-sm=1>
             <v-toolbar-title class="font-weight-black headline">
-              Pagina Principal G5
+              Ingenio
             </v-toolbar-title>
           </v-col>
           <v-col align="end" order=3 order-sm=2>
@@ -68,7 +68,7 @@
                     :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
                       class="font-weight-light"
                     >
-                      PAGINA PRINCIPAL
+                       
                     </span>
 
                     <br>
@@ -77,7 +77,7 @@
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
                       class="font-weight-black"
                     >
-                      G5
+                      INGENIO
                     </span>
 
                   </v-col>
@@ -101,7 +101,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">ACERCA DE PAGINA PRINCIPAL G5</h2>
+          <h2 class="display-2 font-weight-bold mb-3">ACERCA DE INGENIO</h2>
 
           <v-responsive
             class="mx-auto mb-8"
@@ -116,7 +116,7 @@
             class="mx-auto title font-weight-light mb-8"
             max-width="720"
           >
-          Página Principal G5 es una plataforma que te ayudara a conseguir los mejores servicios de ingeniería. De los ingenieros profesionales mejor formados y en todas las áreas que necesitas.
+          Ingenio es una plataforma que te ayudara a conseguir los mejores servicios de ingeniería. De los ingenieros profesionales mejor formados y en todas las áreas que necesitas.
           </v-responsive>
 
           <!-- <v-avatar
