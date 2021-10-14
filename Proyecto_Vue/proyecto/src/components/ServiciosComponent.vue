@@ -1,5 +1,4 @@
 <template>
-  <div>
   <v-container fluid>
     <v-data-iterator
       :items="items"
@@ -74,7 +73,7 @@
           >
             <v-card>
               <v-card-title class="subheading font-weight-bold">
-                {{ item.profesion }}
+                {{ item.habilidad }}
               </v-card-title>
 
               <v-divider></v-divider>
@@ -162,24 +161,15 @@
       </template>
     </v-data-iterator>
   </v-container>
-
-    <div>
-    <BuscadorServicios></BuscadorServicios>
-    </div>
-  </div>
 </template>
 
 <script>
-import { getAllProfesionales } from "../services/Profesionales";
-import BuscadorServicios from '../components/ServiciosComponent';
+import { getAllServicios } from "../services/Servicios";
   //import axios from "axios";
 
   export default {
-    components:{
-      BuscadorServicios
-    },
      mounted() {         
-          getAllProfesionales()
+          getAllServicios()
           .then((response) => {
             this.items= response.data;
           })
@@ -197,16 +187,17 @@ import BuscadorServicios from '../components/ServiciosComponent';
         itemsPerPage: 4,
         sortBy: 'name',
         ordenar: [
-          'Profesion',
-          'Ciudad',
+            'Codigo',
+          'Habilidad',
+          'Valor'
         ],
       //para obtener info del backend
           keys: [
-          'Nombre',
+          'Codigo',
           'Correo',
-          'Telefono',
-          'Profesion',
-          'Ciudad'
+          'Habilidad',
+          'Descripcion',
+          'Valor'
         ],
       }
     },
