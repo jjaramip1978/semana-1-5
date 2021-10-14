@@ -25,7 +25,7 @@
               href="https://vuetifyjs.com"
               :to="page1"
               link
-              >Home</v-btn
+              >Buscador</v-btn
             >
           </v-col>
         </v-row>
@@ -65,7 +65,7 @@
         ></v-text-field>
         <v-select
           v-model="profesion"
-          :items="profesion"
+          :items="listaProfesion"
           :error-messages="profesionErrors"
           label="Profesion"
           required
@@ -92,7 +92,7 @@
           solo
         ></v-text-field>
 
-        <v-btn class="mr-4" color="success" elevation="2" large @click="submit">
+        <v-btn class="mr-4" color="success" elevation="2" large @click="guardar()">
           guardar
         </v-btn>
       </form>
@@ -101,16 +101,18 @@
 </template>
 
 <script>
+import {insertInge} from "../services/Profesionales"
+
 export default {
   title() {
     return `${this.someValue}`;
   },
   data() {
     return {
-      page1: "/",
+      page1: "/buscador",
       someValue: "Ingeniero",
       title: "INGENIO",
-      profesion: [
+      listaProfesion: [
         "Ingeniero Agrónomo",
         "Ingeniero Civil",
         "Ingeniero de Minas",
@@ -127,6 +129,24 @@ export default {
         "Ingeniero Químico",
       ],
     };
+  },
+  methods: {
+    guardar(){
+      const ingeniero = {
+        nombreCompleto: this.nombreCompleto,
+        documento: this.documento,
+        correo: this.correo,
+        telefono: this.telefono,
+        profesion: this.profesion,
+        ciudadOferta: this.ciudadOferta,
+        fechaRegistro: Date.now,
+      };
+      insertInge(ingeniero)
+      .then((response) => {
+        console.log("Se ha creado un ingeniero", response.data._id)
+      })
+      .catch((error) => console.error(error))
+    },
   },
 };
 </script>

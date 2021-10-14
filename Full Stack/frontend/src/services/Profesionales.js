@@ -7,6 +7,13 @@ const ENDPOINT = "/api/busca";
 //se hace petisión get al servidor backend utilizando la ruta deifinida anteriormente:
 const getAllProfesionales = () => httpClient.get(ENDPOINT);
 
+// se crea el ENDPOINT para el post
+const ENDPOINT2 = "/api/nuevo-profesional";
+
+// se crea el servicio de publicar 
+const insertInge = (ingeniero) => httpClient.post(ENDPOINT2, ingeniero)
+
 export {
-    getAllProfesionales
+    getAllProfesionales,
+    insertInge
 }
