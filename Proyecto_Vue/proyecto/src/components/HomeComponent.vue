@@ -2,51 +2,6 @@
 
   <div id="app">
   <v-app>
-    <v-app-bar
-      app
-      color="white"
-      height="100"
-    >
-      <v-avatar
-        class="mr-3"
-        color="grey lighten-5"
-        size="70"
-      >
-        <v-img
-          contain
-          max-height="70%"
-          
-          src="..\assets\logo.png"
-        ></v-img>
-      </v-avatar>
-
-      <v-container>
-        <v-row>
-          <v-col order=1 order-sm=1>
-            <v-toolbar-title class="font-weight-black headline">
-              Pagina Principal G5
-            </v-toolbar-title>
-          </v-col>
-          <v-col align="end" order=3 order-sm=2>
-            <v-btn
-            color="primary" 
-            right='true'
-            href="https://vuetifyjs.com"
-          >Sign in</v-btn>
-          </v-col>
-          <v-col align="start" order=3 order-sm=2>
-              <v-btn
-              color="secondary"
-              right='true'
-              href="https://vuetifyjs.com"
-            >Sign up</v-btn>
-          </v-col>
-        </v-row>              
-      </v-container>
-
-    </v-app-bar>
-
-    
       <section id="hero">
         <v-row no-gutters>
           <v-img

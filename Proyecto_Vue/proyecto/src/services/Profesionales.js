@@ -2,11 +2,11 @@
 import httpClient from "./httpClient";
 
 //esta es la ruta a la cual se harán las peticiones:
-const ENDPOINT = "/api/routes/consultaprof";
+const ENDPOINT = "/api/busca";
 
 //se hace petisión get al servidor backend utilizando la ruta deifinida anteriormente:
-const getAllProfesionales = () => httpClient.get(END_POINT);
+const getAllProfesionales = () => httpClient.get(ENDPOINT);
 
 export {
-    getAllProfesionales,
+    getAllProfesionales
 }
