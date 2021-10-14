@@ -33,7 +33,7 @@
     </v-app-bar>
 
     <v-container>
-      <h1>Registrate</h1>
+      <h1>Registrate Cliente</h1>
       <form>        
         <v-text-field
           v-model="nombreCompleto"
@@ -63,16 +63,6 @@
           @blur="$v.email.$touch()"
           solo
         ></v-text-field>
-        <v-select
-          v-model="profesion"
-          :items="profesion"
-          :error-messages="profesionErrors"
-          label="Profesion"
-          required
-          @change="$v.profesion.$touch()"
-          @blur="$v.profesion.$touch()"
-          solo
-        ></v-select>
         <v-text-field
           v-model="telefono"
           :error-messages="telefono"
@@ -108,7 +98,7 @@ export default {
   data() {
     return {
       page1: "/",
-      someValue: "Registrate",
+      someValue: "Cliente",
       title: "INGENIO",
       profesion: [
         "Ingeniero Agrónomo",
