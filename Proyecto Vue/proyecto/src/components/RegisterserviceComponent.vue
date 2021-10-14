@@ -83,7 +83,7 @@ export default {
   },
   data() {
     return {
-      page1: "/",
+      page1: "/buscador",
       someValue: "Ingeniero",
       title: "INGENIO",
       profesion: [
