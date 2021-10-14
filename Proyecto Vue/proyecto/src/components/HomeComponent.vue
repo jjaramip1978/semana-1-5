@@ -22,11 +22,11 @@
             </v-col>
             <v-col align="end">
               <v-btn color="primary" right="true" href="https://vuetifyjs.com" :to="page3" link
-                >Sign in</v-btn
+                >Cliente</v-btn
               >
               &nbsp;
               <v-btn color="secondary" right="true" href="https://vuetifyjs.com" :to="page2" link
-                >Sign up</v-btn
+                >Ingeniero</v-btn
               >
             </v-col>
           </v-row>
@@ -220,8 +220,8 @@ export default {
     return {
       someValue: 'Ingenio',
       page1: "/buscador",
-      page2: "/signin",
-      page3: "/buscador",
+      page2: "/signininge",
+      page3: "/signinclient",
       articles: [
         {
           src: "https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",

@@ -16,9 +16,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Buscador.vue')
   },
   {
-    path: '/signin',
-    name: 'signin',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signin.vue')
+    path: '/signininge',
+    name: 'signininge',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Signininge.vue')
+  },
+  {
+    path: '/signinclient',
+    name: 'signinclient',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Signinclient.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Registerservice.vue')
   },
 ]
 
