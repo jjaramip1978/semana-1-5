@@ -69,6 +69,18 @@
                 </v-btn>
               </v-btn-toggle>
             </template>
+            <v-spacer></v-spacer>
+            <v-btn
+              class="mx-2"
+              fab
+              dark
+              color="blue"
+              :to="page2" link
+            >
+              <v-icon dark>
+                mdi-plus
+              </v-icon>
+            </v-btn>
           </v-toolbar>
         </template>
 
@@ -178,6 +190,7 @@ export default {
   data() {
     return {
       page1: '/',
+      page2: '/register',
       someValue: 'Buscador de Servicios',
       title: "INGENIO",
       itemsPerPageArray: [4, 8, 12],
