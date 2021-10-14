@@ -34,25 +34,24 @@
 
     <v-container>
       <h1>Registrate</h1>
-      <form>
+      <form>        
         <v-text-field
-          v-model="lastname"
-          :error-messages="lastnameErrors"
-          :counter="10"
-          label="Apellidos"
+          v-model="nombreCompleto"
+          :error-messages="nombreCompletoErrors"
+          label="Nombre Completo"
           required
-          @input="$v.lastname.$touch()"
-          @blur="$v.lastname.$touch()"
+          @input="$v.nombreCompleto.$touch()"
+          @blur="$v.nombreCompleto.$touch()"
           solo
         ></v-text-field>
         <v-text-field
-          v-model="name"
-          :error-messages="nameErrors"
+          v-model="documento"
+          :error-messages="documentoErrors"
           :counter="10"
-          label="Nombres"
+          label="Documento de Identidad"
           required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
+          @input="$v.documento.$touch()"
+          @blur="$v.documento.$touch()"
           solo
         ></v-text-field>
         <v-text-field
@@ -65,15 +64,33 @@
           solo
         ></v-text-field>
         <v-select
-          v-model="select"
-          :items="items"
-          :error-messages="selectErrors"
-          label="Item"
+          v-model="profesion"
+          :items="profesion"
+          :error-messages="profesionErrors"
+          label="Profesion"
           required
-          @change="$v.select.$touch()"
-          @blur="$v.select.$touch()"
+          @change="$v.profesion.$touch()"
+          @blur="$v.profesion.$touch()"
           solo
         ></v-select>
+        <v-text-field
+          v-model="telefono"
+          :error-messages="telefono"
+          label="Numero Celular"
+          required
+          @input="$v.telefono.$touch()"
+          @blur="$v.telefono.$touch()"
+          solo
+        ></v-text-field>
+        <v-text-field
+          v-model="ciudadOferta"
+          :error-messages="ciudadOferta"
+          label="Ciudad de Residencia"
+          required
+          @input="$v.ciudadOferta.$touch()"
+          @blur="$v.ciudadOferta.$touch()"
+          solo
+        ></v-text-field>
 
         <v-btn class="mr-4" color="success" elevation="2" large @click="submit">
           guardar
@@ -93,7 +110,7 @@ export default {
       page1: "/",
       someValue: "Registrate",
       title: "INGENIO",
-      items: [
+      profesion: [
         "Ingeniero Agrónomo",
         "Ingeniero Civil",
         "Ingeniero de Minas",
