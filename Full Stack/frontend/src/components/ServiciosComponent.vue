@@ -58,6 +58,18 @@
               </v-btn>
             </v-btn-toggle>
           </template>
+            <v-spacer></v-spacer>
+            <v-btn
+              class="mx-2"
+              fab
+              dark
+              color="blue"
+              :to="page2" link
+            >
+              <v-icon dark>
+                mdi-plus
+              </v-icon>
+            </v-btn>
         </v-toolbar>
       </template>
 
@@ -178,6 +190,8 @@ import { getAllServicios } from "../services/Servicios";
     data () {
       return {  
         //title : "Ingenio",
+        page2:'/register',
+        page4:'/signininge',
         items: [],
         itemsPerPageArray: [4, 8, 12],
         search: '',
