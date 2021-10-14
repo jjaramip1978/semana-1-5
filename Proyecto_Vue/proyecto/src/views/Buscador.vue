@@ -31,7 +31,7 @@
               flat
               solo-inverted
               hide-details
-              :items="item.profesion"
+              :items="ordenar"
               prepend-inner-icon="mdi-magnify"
               label="Sort by"
             ></v-select>
@@ -65,7 +65,7 @@
         <v-row>
           <v-col
             v-for="item in props.items"
-            :key="item.profesion"
+            :key="item.name"
             cols="12"
             sm="6"
             md="4"
@@ -84,13 +84,13 @@
                   :key="index"
                 >
                   <v-list-item-content :class="{ 'blue--text': sortBy === key }">
-                    {{ item.profesion }}:
+                    {{ key }}:
                   </v-list-item-content>
                   <v-list-item-content
                     class="align-end"
                     :class="{ 'blue--text': sortBy === key }"
                   >
-                    {{ item[item.profesion.toLowerCase()] }}
+                    {{ item[key.toLowerCase()] }}
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -186,8 +186,19 @@ import { getAllProfesionales } from "../services/Profesionales";
         page: 1,
         itemsPerPage: 4,
         sortBy: 'name',
+        ordenar: [
+          'Profesion',
+          'Ciudad',
+          'Telefono'
+        ],
       //para obtener info del backend
-       
+          keys: [
+          'Nombre',
+          'Correo',
+          'Telefono',
+          'Profesion',
+          'Ciudad'
+        ],
       }
     },
         computed: {
