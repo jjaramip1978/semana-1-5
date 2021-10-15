@@ -11,9 +11,9 @@ const getAllProfesionales = () => httpClient.get(ENDPOINT);
 const ENDPOINT2 = "/api/nuevo-profesional";
 
 // se crea el servicio de publicar 
-const insertInge = (ingeniero) => httpClient.post(ENDPOINT2, ingeniero)
+const insertInge = (ingeniero) => httpClient.post(ENDPOINT2, ingeniero);
 
 export {
     getAllProfesionales,
-    insertInge
+    insertInge,
 }

@@ -68,7 +68,7 @@
           solo
         ></v-text-field>
 
-        <v-btn class="mr-4" color="success" elevation="2" large @click="submit">
+        <v-btn class="mr-4" color="success" elevation="2" large @click="insertServicio()">
           guardar
         </v-btn>
       </form>
@@ -77,6 +77,8 @@
 </template>
 
 <script>
+import { insertServicio } from "../services/Servicios";
+
 export default {
   title() {
     return `${this.someValue}`;
@@ -86,23 +88,22 @@ export default {
       page1: "/buscador",
       someValue: "Ingeniero",
       title: "INGENIO",
-      profesion: [
-        "Ingeniero Agrónomo",
-        "Ingeniero Civil",
-        "Ingeniero de Minas",
-        "Ingeniero de Sistemas",
-        "Ingeniero en Telecomunicaciones",
-        "Ingeniero Eléctrico",
-        "Ingeniero Electrónico",
-        "Ingeniero en Energía",
-        "Ingeniero Ambiental",
-        "Ingeniero Logístico",
-        "Ingeniero Industrial",
-        "Ingeniero Mecanico",
-        "Ingeniero Mecatrónico",
-        "Ingeniero Químico",
-      ],
     };
+  },
+  methods: {
+    guardar(){
+      const servicio = {
+        codigoServicio:this.codigoServicio,
+        correoProfesional:this.correoProfesional,
+        descripcion:this.descripcion,
+        valor: this.valor,
+      };
+      insertServicio(servicio)
+      .then((response) => {
+        console.log("Se ha creado un ingeniero", response.data._id)
+      })
+      .catch((error) => console.error(error))
+    },
   },
 };
 </script>
