@@ -40,8 +40,6 @@
           :error-messages="codigoServicio"
           label="Codigo del Servicio"
           required
-          @input="$v.codigoServicio.$touch()"
-          @blur="$v.codigoServicio.$touch()"
           solo
         ></v-text-field>
         <v-text-field
@@ -49,8 +47,6 @@
           :error-messages="emailErrors"
           label="Correo del Profesional"
           required
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
           solo
         ></v-text-field>
         <v-textarea 
@@ -63,12 +59,10 @@
           :error-messages="valor"
           label="Valor del Servicio"
           required
-          @input="$v.valor.$touch()"
-          @blur="$v.valor.$touch()"
           solo
         ></v-text-field>
 
-        <v-btn class="mr-4" color="success" elevation="2" large @click="insertServicio()">
+        <v-btn class="mr-4" color="success" elevation="2" large @click="guardar()">
           guardar
         </v-btn>
       </form>
