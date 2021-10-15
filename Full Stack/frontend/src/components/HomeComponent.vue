@@ -247,7 +247,7 @@ export default {
         },
         {
           icon: "mdi-briefcase-outline",
-          title: "Comparte las ofertas de tus empleo",
+          title: "Comparte las ofertas de tu empleo",
           text: "Publica un trabajo y recibe propuestas y perfiles de ingenieros interesados en él. Es fácil y gratis. Escribe un título, descripción, presupuesto y pública tu propuesta de forma llamativa",
         },
         {
