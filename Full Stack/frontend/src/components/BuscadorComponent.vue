@@ -229,6 +229,7 @@ import BuscadorServicios from '../components/ServiciosComponent';
         //title : "Ingenio",
         page2:'/register',
         page4:'/signininge',
+        page1: '/',
         items: [],
         itemsPerPageArray: [4, 8, 12],
         search: '',
