@@ -10,6 +10,8 @@ import Servicio from '../models/servicio';
 router.post('/nuevo-servicio', async(req, res)=>{
 
     const body = req.body;
+
+    console.log(req.params)
     
     try {
         

@@ -36,20 +36,29 @@
       <h1>Registrar nuevo servicio</h1>
       <form>
         <v-text-field
-          v-model="codigoServicio"
-          :error-messages="codigoServicio"
+          v-model="codigo"
+          :error-messages="codigoErrors"
           label="Codigo del Servicio"
           required
           solo
         ></v-text-field>
         <v-text-field
-          v-model="email"
-          :error-messages="emailErrors"
+          v-model="correo"
+          :error-messages="correoErrors"
           label="Correo del Profesional"
           required
           solo
         ></v-text-field>
-        <v-textarea 
+        <v-text-field
+          v-model="habilidad"
+          :error-messages="habilidadErrors"
+          label="Habilidad del Profesional"
+          required
+          solo
+        ></v-text-field>
+        <v-textarea
+        v-model="descripcion"
+        :error-messages="descripcionErrors"
         autocomplete="Descripcion del Servicio" 
         label="Descripcion del Servicio" 
         solo
@@ -87,16 +96,17 @@ export default {
   methods: {
     guardar(){
       const servicio = {
-        codigoServicio:this.codigoServicio,
-        correoProfesional:this.correoProfesional,
+        codigo:this.codigo,
+        correo:this.correo,
+        habilidad:this.habilidad,
         descripcion:this.descripcion,
-        valor: this.valor,
+        valor:this.valor
       };
       insertServicio(servicio)
       .then((response) => {
         console.log("Se ha creado un ingeniero", response.data._id)
       })
-      .catch((error) => console.error(error))
+      .catch((error) => console.log(error))
     },
   },
 };

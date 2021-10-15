@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const servicioSchema = new Schema({
 
-    codigoServicio:{type:String, required:[true, 'Codigo obligatorio']},
-    correoProfesional:{type:String, required:[true, 'Correo Requerido']},
+    codigo:{type:String, required:[true, 'Codigo obligatorio']},
+    correo:{type:String, required:[true, 'Correo Requerido']},    
+    habilidad:{type:String, required:[true, 'Habilidad Obligatoria']},
     descripcion:{type:String, required:[true, 'Obligatorio']},
     valor:String
 })

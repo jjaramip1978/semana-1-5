@@ -21,12 +21,8 @@
               </v-toolbar-title>
             </v-col>
             <v-col align="end">
-              <v-btn color="primary" right="true" href="https://vuetifyjs.com" :to="page3" link
-                >Cliente</v-btn
-              >
-              &nbsp;
               <v-btn color="secondary" right="true" href="https://vuetifyjs.com" :to="page2" link
-                >Ingeniero</v-btn
+                >Registrarse</v-btn
               >
             </v-col>
           </v-row>

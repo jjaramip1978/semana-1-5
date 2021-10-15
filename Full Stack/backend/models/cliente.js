@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 const clienteSchema = new Schema({
 
     documento:{type:String, required:[true, 'Documento obligatorio']},
-    nombreCompleto:{type:String, required:[true, 'Nombre Requerido']},
+    nombre:{type:String, required:[true, 'Nombre Requerido']},
     correo:{type:String, required:[true, 'Correo Obligatorio']},
     telefono:String,
-    ciudadOferta:String
+    ciudad:String
 })
 
 // Convertir a modelo
