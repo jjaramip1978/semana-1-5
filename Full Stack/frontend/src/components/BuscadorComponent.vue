@@ -27,6 +27,7 @@
         </v-container>
     </v-app-bar>
   
+  <h1>Buscador de Ingenieros Registrados</h1>
   <v-container fluid>
     <v-data-iterator
       :items="items"
@@ -201,6 +202,7 @@
       </template>
     </v-data-iterator>
   </v-container>
+  <h1>Buscador de Servicios Registrados</h1>
 
     <div>
     <BuscadorServicios></BuscadorServicios>
@@ -277,5 +279,8 @@ import BuscadorServicios from '../components/ServiciosComponent';
 <style>
 .v-application--wrap {
   min-height: 0vh !important;
+}
+h1 {
+    text-align:center;
 }
 </style>
