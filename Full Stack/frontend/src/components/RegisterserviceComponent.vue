@@ -37,14 +37,14 @@
       <form>
         <v-text-field
           v-model="codigo"
-          :error-messages="codigoErrors"
+          :error-messages="servicios.codigo"
           label="Codigo del Servicio"
           required
           solo
         ></v-text-field>
         <v-text-field
           v-model="correo"
-          :error-messages="correoErrors"
+          :error-messages="emailErrors"
           label="Correo del Profesional"
           required
           solo
@@ -52,16 +52,16 @@
         <v-text-field
           v-model="habilidad"
           :error-messages="habilidadErrors"
-          label="Habilidad del Profesional"
+          label="Habilidad"
           required
           solo
         ></v-text-field>
         <v-textarea
-        v-model="descripcion"
-        :error-messages="descripcionErrors"
-        autocomplete="Descripcion del Servicio" 
-        label="Descripcion del Servicio" 
-        solo
+          v-model="descripcion"
+          autocomplete="Descripcion del Servicio"
+          label="Descripcion del Servicio"
+          required
+          solo
         ></v-textarea>
         <v-text-field
           v-model="valor"
@@ -70,7 +70,13 @@
           solo
         ></v-text-field>
 
-        <v-btn class="mr-4" color="success" elevation="2" large @click="guardar()">
+        <v-btn
+          class="mr-4"
+          color="success"
+          elevation="2"
+          large
+          @click="guardar()"
+        >
           guardar
         </v-btn>
       </form>
@@ -79,7 +85,8 @@
 </template>
 
 <script>
-import { insertServicio } from "../services/Servicios";
+//import { insertServicio } from "../services/Servicios";
+import axios from "axios";
 
 export default {
   title() {
@@ -90,22 +97,58 @@ export default {
       page1: "/buscador",
       someValue: "Ingeniero",
       title: "INGENIO",
+      servicios: {
+        codigo: "",
+        correo: "",
+        habilidad: "",
+        descripcion: "",
+        valor: "",
+      },
     };
   },
   methods: {
+    /** 
     guardar(){
       const servicio = {
-        codigo:this.codigo,
-        correo:this.correo,
-        habilidad:this.habilidad,
+        codigoServicio:this.codigoServicio,
+        correoProfesional:this.correoProfesional,
         descripcion:this.descripcion,
-        valor:this.valor
+        valor: this.valor,
       };
       insertServicio(servicio)
       .then((response) => {
         console.log("Se ha creado un ingeniero", response.data._id)
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.error(error))
+    },
+    */
+    guardar() {
+      console.log(this.servicios);
+      axios
+        .post("http://localhost:3000/api/nuevo-servicio", 
+        {
+        codigo: this.codigo,
+        correo: this.correo,
+        habilidad: this.habilidad,
+        descripcion: this.descripcion,
+        valor: this.valor,
+        })
+        .then((res) => {
+          this.servicios.push(res.data);
+          this.servicios.codigo = "";
+          this.servicios.correo = "";
+          this.servicios.habilidad = "";
+          this.servicios.descripcion = "";
+          this.servicios.valor = "";
+          this.mensaje.color = "success";
+          this.mensaje.texto = "Nota Agregada";
+          this.showAlert();
+        })
+        .catch((e) => {
+          console.log(e.response);
+        });
+      location.reload();
+      this.$router.go(0);
     },
   },
 };
