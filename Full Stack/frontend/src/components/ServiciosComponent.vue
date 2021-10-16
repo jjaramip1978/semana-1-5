@@ -106,6 +106,11 @@
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                  <v-btn color="success" :to="page3 + item._id" link>Editar</v-btn>
+                  <v-btn color="error" @click="eliminarServicio(item._id)">Eliminar</v-btn>
+              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -177,7 +182,7 @@
 
 <script>
 import { getAllServicios } from "../services/Servicios";
-  //import axios from "axios";
+import axios from "axios";
 
   export default {
      mounted() {         
@@ -191,6 +196,7 @@ import { getAllServicios } from "../services/Servicios";
       return {  
         //title : "Ingenio",
         page2:'/register',
+        page3:'/actuservicio/',
         page4:'/signininge',
         items: [],
         itemsPerPageArray: [4, 8, 12],
@@ -232,6 +238,16 @@ import { getAllServicios } from "../services/Servicios";
       },
       updateItemsPerPage (number) {
         this.itemsPerPage = number
+      },
+      eliminarServicio(id) {
+        console.log(id)
+        axios.delete("http://localhost:3000/api/borraser/" + id)
+        .then(response => {
+          this.result.splice(this.id, 1)
+          console.log(response)
+        });
+        location. reload()
+        this.$router.go(0)
       },
     },
   }

@@ -36,12 +36,12 @@
       <h1>Registrate Cliente</h1>
       <form>        
         <v-text-field
-          v-model="nombreCompleto"
-          :error-messages="nombreCompletoErrors"
+          v-model="nombre"
+          :error-messages="nombreErrors"
           label="Nombre Completo"
           required
-          @input="$v.nombreCompleto.$touch()"
-          @blur="$v.nombreCompleto.$touch()"
+          @input="$v.nombre.$touch()"
+          @blur="$v.nombre.$touch()"
           solo
         ></v-text-field>
         <v-text-field
@@ -55,12 +55,12 @@
           solo
         ></v-text-field>
         <v-text-field
-          v-model="email"
-          :error-messages="emailErrors"
+          v-model="correo"
+          :error-messages="correoErrors"
           label="E-mail"
           required
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
+          @input="$v.correo.$touch()"
+          @blur="$v.correo.$touch()"
           solo
         ></v-text-field>
         <v-text-field
@@ -73,12 +73,12 @@
           solo
         ></v-text-field>
         <v-text-field
-          v-model="ciudadOferta"
-          :error-messages="ciudadOferta"
+          v-model="ciudad"
+          :error-messages="ciudad"
           label="Ciudad de Residencia"
           required
-          @input="$v.ciudadOferta.$touch()"
-          @blur="$v.ciudadOferta.$touch()"
+          @input="$v.ciudad.$touch()"
+          @blur="$v.ciudad.$touch()"
           solo
         ></v-text-field>
 
