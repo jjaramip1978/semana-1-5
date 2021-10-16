@@ -34,25 +34,14 @@
 
     <v-container>
       <h1>Actualizar Ingenierio</h1>
-      <form>
-        <v-select
-          v-model="id"
-          :items="id"
-          :error-messages="idErrors"
-          label="ID Ingeniero"
-          required
-          @change="$v.id.$touch()"
-          @blur="$v.id.$touch()"
-          solo
-        ></v-select> 
+      <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
-          v-model="nombreCompleto"
-          :error-messages="nombreCompletoErrors"
+          v-model="nombre"
+          :error-messages="nombreErrors"
           label="Nombre Completo"
           required
-          @input="$v.nombreCompleto.$touch()"
-          @blur="$v.nombreCompleto.$touch()"
-          solo
+          @input="$v.nombre.$touch()"
+          @blur="$v.nombre.$touch()"
         ></v-text-field>
         <v-text-field
           v-model="documento"
@@ -62,16 +51,14 @@
           required
           @input="$v.documento.$touch()"
           @blur="$v.documento.$touch()"
-          solo
         ></v-text-field>
         <v-text-field
-          v-model="email"
-          :error-messages="emailErrors"
+          v-model="correo"
+          :error-messages="correoErrors"
           label="E-mail"
           required
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
-          solo
+          @input="$v.correo.$touch()"
+          @blur="$v.correo.$touch()"
         ></v-text-field>
         <v-select
           v-model="profesion"
@@ -81,7 +68,6 @@
           required
           @change="$v.profesion.$touch()"
           @blur="$v.profesion.$touch()"
-          solo
         ></v-select>
         <v-text-field
           v-model="telefono"
@@ -90,32 +76,50 @@
           required
           @input="$v.telefono.$touch()"
           @blur="$v.telefono.$touch()"
-          solo
         ></v-text-field>
         <v-text-field
-          v-model="ciudadOferta"
+          v-model="ciudad"
           :error-messages="ciudadOferta"
           label="Ciudad de Residencia"
           required
-          @input="$v.ciudadOferta.$touch()"
-          @blur="$v.ciudadOferta.$touch()"
-          solo
+          @input="$v.ciudad.$touch()"
+          @blur="$v.ciudad.$touch()"
         ></v-text-field>
 
-        <v-btn class="mr-4" color="success" elevation="2" large @click="guardar()">
-          guardar
+        <v-btn
+          class="mr-4"
+          color="success"
+          elevation="2"
+          large
+          @click="guardar()"
+        >
+          actualizar
         </v-btn>
-      </form>
+      </v-form>
     </v-container>
   </v-app>
 </template>
 
 <script>
-import {insertInge} from "../services/Profesionales"
+//import { insertInge } from "../services/Profesionales";
+import axios from "axios";
 
 export default {
   title() {
     return `${this.someValue}`;
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/api//busca/" + this.$route.params.id)
+      .then((respuesta) => {
+        this.nombre = respuesta.data.nombre;
+        this.documento = respuesta.data.documento;
+        this.correo = respuesta.data.correo;
+        this.profesion = respuesta.data.profesion;
+        this.telefono = respuesta.data.telefono;
+        this.ciudad = respuesta.data.ciudad;
+        console.log(respuesta.data);
+      });
   },
   data() {
     return {
@@ -138,24 +142,32 @@ export default {
         "Ingeniero Mecatrónico",
         "Ingeniero Químico",
       ],
+
+      nombre: "",
+      documento: "",
+      correo: "",
+      profesion: "",
+      telefono: "",
+      ciudad: "",
     };
   },
   methods: {
-    guardar(){
-      const ingeniero = {
-        nombreCompleto: this.nombreCompleto,
-        documento: this.documento,
-        correo: this.correo,
-        telefono: this.telefono,
-        profesion: this.profesion,
-        ciudadOferta: this.ciudadOferta,
-        fechaRegistro: Date.now,
-      };
-      insertInge(ingeniero)
-      .then((response) => {
-        console.log("Se ha creado un ingeniero", response.data._id)
-      })
-      .catch((error) => console.error(error))
+    guardar() {
+      console.log(this.ingeniero);
+      axios.put(
+        "http://localhost:3000/api/actualiza/" + this.$route.params.id,
+        {
+          nombre: this.nombre,
+          documento: this.documento,
+          correo: this.correo,
+          telefono: this.telefono,
+          profesion: this.profesion,
+          ciudad: this.ciudad,
+        }
+      );
+
+      location.reload();
+      this.$router.go(0);
     },
   },
 };

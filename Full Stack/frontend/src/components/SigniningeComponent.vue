@@ -22,9 +22,14 @@
             <v-btn
               color="secundary"
               right="true"
-              href="https://vuetifyjs.com"
-              :to="page1"
-              link
+              :to="page1" link
+              >Home</v-btn
+            >
+            &nbsp;
+            <v-btn
+              color="primary"
+              right="true"
+              :to="page2" link
               >Buscador</v-btn
             >
           </v-col>
@@ -32,16 +37,16 @@
       </v-container>
     </v-app-bar>
 
-    <v-container>
+     <v-container>
       <h1>Registrate Ingenierio</h1>
       <form>        
         <v-text-field
-          v-model="nombreCompleto"
-          :error-messages="nombreCompletoErrors"
+          v-model="nombre"
+          :error-messages="nombreErrors"
           label="Nombre Completo"
           required
-          @input="$v.nombreCompleto.$touch()"
-          @blur="$v.nombreCompleto.$touch()"
+          @input="$v.nombre.$touch()"
+          @blur="$v.nombre.$touch()"
           solo
         ></v-text-field>
         <v-text-field
@@ -55,12 +60,12 @@
           solo
         ></v-text-field>
         <v-text-field
-          v-model="email"
-          :error-messages="emailErrors"
+          v-model="correo"
+          :error-messages="correoErrors"
           label="E-mail"
           required
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
+          @input="$v.correo.$touch()"
+          @blur="$v.correo.$touch()"
           solo
         ></v-text-field>
         <v-select
@@ -75,20 +80,18 @@
         ></v-select>
         <v-text-field
           v-model="telefono"
-          :error-messages="telefono"
+          :error-messages="telefonoErrors"
           label="Numero Celular"
-          required
           @input="$v.telefono.$touch()"
           @blur="$v.telefono.$touch()"
           solo
         ></v-text-field>
         <v-text-field
-          v-model="ciudadOferta"
-          :error-messages="ciudadOferta"
+          v-model="ciudad"
+          :error-messages="ciudadErrors"
           label="Ciudad de Residencia"
-          required
-          @input="$v.ciudadOferta.$touch()"
-          @blur="$v.ciudadOferta.$touch()"
+          @input="$v.ciudad.$touch()"
+          @blur="$v.ciudad.$touch()"
           solo
         ></v-text-field>
 
@@ -101,7 +104,8 @@
 </template>
 
 <script>
-import {insertInge} from "../services/Profesionales"
+//import {insertInge} from "../services/Profesionales"
+import axios from "axios";
 
 export default {
   title() {
@@ -109,7 +113,8 @@ export default {
   },
   data() {
     return {
-      page1: "/buscador",
+      page1: "/",
+      page2: '/buscador',
       someValue: "Ingeniero",
       title: "INGENIO",
       listaProfesion: [
@@ -131,22 +136,29 @@ export default {
     };
   },
   methods: {
-    guardar(){
-      const ingeniero = {
-        nombreCompleto: this.nombreCompleto,
+    guardar () {
+     axios.post('http://localhost:3000/api/nuevo-profesional',
+     {
+        nombre: this.nombre,
         documento: this.documento,
         correo: this.correo,
         telefono: this.telefono,
         profesion: this.profesion,
-        ciudadOferta: this.ciudadOferta,
-        fechaRegistro: Date.now,
-      };
-      insertInge(ingeniero)
-      .then((response) => {
-        console.log("Se ha creado un ingeniero", response.data._id)
+        ciudad: this.ciudad
       })
-      .catch((error) => console.error(error))
-    },
+     .then(res=>{
+       console.log(res);
+       this.mensaje.color="success";
+       this.mensaje.texto="Nota Agregada";
+       this.showAlert();
+
+     })
+     .catch(e => {
+       console.log(e.response);
+     });
+      location.reload();
+      this.$router.go(0);
+    }
   },
 };
 </script>
