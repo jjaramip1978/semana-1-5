@@ -33,9 +33,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Registerservice.vue')
   },
   {
-    path: '/actuinge',
+    path: '/actuinge/:id',
     name: 'actuinge',
     component: () => import(/* webpackChunkName: "about" */ '../views/Actuinge.vue')
+  },
+  {
+    path: '/actuservicio/:id',
+    name: 'actuservicio',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Actuservicio.vue')
   },
 ]
 

@@ -19,7 +19,7 @@
               </v-toolbar-title>
             </v-col>
             <v-col align="end">
-              <v-btn color="secundary" right="true" href="https://vuetifyjs.com" :to="page1" link
+              <v-btn color="secundary" right="true" :to="page1" link
                 >Home</v-btn
               >
             </v-col>
@@ -135,6 +135,11 @@
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                  <v-btn color="success" :to="page3 + item._id" link>Editar</v-btn>
+                  <v-btn color="error" @click="eliminarProfesional(item._id)" :to="pageA" link>Eliminar</v-btn>
+              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -213,7 +218,8 @@
 <script>
 import { getAllProfesionales } from "../services/Profesionales";
 import BuscadorServicios from '../components/ServiciosComponent';
-  //import axios from "axios";
+//import dialog from '../components/DialogoEliminar'
+import axios from "axios";
 
   export default {
     components:{
@@ -230,7 +236,9 @@ import BuscadorServicios from '../components/ServiciosComponent';
       return {  
         //title : "Ingenio",
         page2:'/register',
+        page3:'/actuinge/',
         page4:'/signininge',
+        pageA:'/buscador',
         page1: '/',
         items: [],
         itemsPerPageArray: [4, 8, 12],
@@ -271,6 +279,16 @@ import BuscadorServicios from '../components/ServiciosComponent';
       },
       updateItemsPerPage (number) {
         this.itemsPerPage = number
+      },
+      eliminarProfesional(id) {
+        console.log(id)
+        axios.delete("http://localhost:3000/api/borra/" + id)
+        .then(response => {
+          this.result.splice(this.id, 1)
+          console.log(response)
+        });
+        location. reload()
+        this.$router.go(0)
       },
     },
   }
